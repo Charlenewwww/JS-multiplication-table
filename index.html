@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiplication Table</title>
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./index.js">
+    <!-- 引入vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
+
 <body>
-    <div>
-        
+    <div class="container" id="app">
+        <div class="title">
+            <div class="decoration-line">
+                <p class="title-x">×</p>
+                <span class="title-line"></span>
+                <p class="title-x">×</p>
+            </div>
+            <div>
+                <p class="title-text ch">九九乘法表</p>
+                <p class="title-text en">MULTIPLICATION CHART</p>
+            </div>
+            <div class="decoration-line">
+                <p class="title-x">×</p>
+                <span class="title-line"></span>
+                <p class="title-x">×</p>
+            </div>
+        </div>
+        <div class="table" v-for="(item,key) in tableData">
+            <div class="table-container">
+                <span class="title-number">{{key}}</span>
+                    <div  v-for="arr in item">
+                        <span>{{arr[0]}}</span>
+                        <span>×</span>
+                        <span>{{arr[1]}}</span>
+                        <span>=</span>
+                        <span>{{arr[2]}}</span>
+                    </div>
+            </div>
+        </div>
     </div>
+    <script src="./index.js"></script>
 </body>
+
 </html>
