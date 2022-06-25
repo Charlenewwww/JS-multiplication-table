@@ -13,6 +13,5 @@ var app = new Vue({
             if (i<9) return table99(i+1,1)
         }
        table99(2,1)
-       console.log(this.tableData)
     }
 })
